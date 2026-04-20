@@ -1,0 +1,6 @@
+[package]
+name = "lonestarledgers"
+version = "1.0.0"
+
+[install]
+registry = "https://registry.npmjs.org/"
