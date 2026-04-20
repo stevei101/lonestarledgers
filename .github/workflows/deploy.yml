@@ -1,0 +1,33 @@
+name: Deploy to lornu.ai
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build application
+        run: bun run build
+
+      - name: Deploy to lornu.ai
+        env:
+          DEPLOY_KEY: ${{ secrets.LORNU_DEPLOY_KEY }}
+          DEPLOY_HOST: ${{ secrets.LORNU_DEPLOY_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H $(echo $DEPLOY_HOST | cut -d@ -f2) >> ~/.ssh/known_hosts 2>/dev/null || true
+          scp -i ~/.ssh/deploy_key -r dist/* $DEPLOY_HOST:/var/www/lonestarledgers/
