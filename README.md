@@ -82,24 +82,22 @@ bun run type-check
 
 ## Deployment
 
-### GitHub Actions
-Automatic deployment on push to `main` branch.
-
-**Required Secrets** (Settings → Secrets and variables → Actions):
-```
-LORNU_DEPLOY_KEY   → SSH private key
-LORNU_DEPLOY_HOST  → Deployment server (e.g., deploy@lornu.ai)
-```
+### GitHub Actions Build Pipeline
+Automatic build on push to `main` branch.
 
 **Workflow File**: `.github/workflows/deploy.yml`
 - Builds with Bun
-- Deploys `dist/` to `/var/www/lonestarledgers/`
+- Type checks with TypeScript
+- Uploads artifacts to Actions
 
-### Manual Deployment
-```bash
-bun run build
-scp -r dist/* user@server:/var/www/lonestarledgers/
-```
+### GitOps Deployment (Flux + ESO + OIDC)
+lornu.ai bot handles deployment via:
+- **Flux**: GitOps continuous deployment
+- **ESO**: External Secrets Operator for credential management
+- **OIDC**: Secure authentication without manual secrets
+- **Private repo sync**: Flux monitors this repo and auto-deploys changes
+
+No manual deployment steps needed—Flux watches the `main` branch and applies changes automatically.
 
 ## Environment
 
