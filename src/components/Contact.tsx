@@ -1,18 +1,24 @@
 import { useState } from 'react'
-import { COMPANY } from '../constants'
+import { COMPANY, CONTACT_SECTION_ID } from '../constants'
+import { buildContactMailto } from '../utils/contactMailto'
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
+    window.location.href = buildContactMailto(form)
     setIsSubmitted(true)
-    e.currentTarget.reset()
-    setTimeout(() => setIsSubmitted(false), 5000)
+    form.reset()
+    setTimeout(() => setIsSubmitted(false), 8000)
   }
 
   return (
-    <section id="contact" className="py-32 bg-tx-blue text-white relative overflow-hidden scroll-reveal">
+    <section
+      id={CONTACT_SECTION_ID}
+      className="py-32 bg-tx-blue text-white relative overflow-hidden scroll-reveal"
+    >
       <div className="max-w-3xl mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-playfair mb-4">Get started</h2>
@@ -81,8 +87,8 @@ export default function Contact() {
           </div>
 
           <p className="text-xs text-slate-300 leading-relaxed">
-            By submitting, you agree we may contact you about Lone Star Ledgers services. We do not sell your
-            information. See our{' '}
+            Submitting opens your email app with a pre-filled message to {COMPANY.email}. Send the email to
+            complete your inquiry. We do not sell your information. See our{' '}
             <a href="#privacy" className="underline hover:text-tx-copper">
               privacy notice
             </a>
@@ -101,13 +107,17 @@ export default function Contact() {
               role="status"
               className="text-center p-4 bg-green-900/40 text-green-100 rounded-lg font-medium border border-green-700/50"
             >
-              Thank you — we received your message and will reply within one business day.
+              Your email app should open with your message ready to send. If it did not open, email us at{' '}
+              <a href={`mailto:${COMPANY.email}`} className="underline">
+                {COMPANY.email}
+              </a>
+              .
             </div>
           )}
         </form>
 
         <p className="text-center text-sm text-slate-300 mt-8">
-          Prefer email?{' '}
+          Prefer to write directly?{' '}
           <a href={`mailto:${COMPANY.email}`} className="underline hover:text-tx-copper">
             {COMPANY.email}
           </a>

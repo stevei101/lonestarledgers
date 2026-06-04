@@ -1,3 +1,5 @@
+import { CONTACT_HREF } from '../constants'
+
 const services: Array<{
   icon: string
   title: string
@@ -18,14 +20,14 @@ const services: Array<{
     isCopperTheme: true,
     description:
       'Cash flow forecasting and KPI dashboards for growing firms — see what is coming before month-end surprises.',
-    learnMore: '#contact',
+    learnMore: CONTACT_HREF,
   },
   {
     icon: 'fa-landmark',
     title: 'Comptroller Guard',
     description:
       'Texas Franchise Tax and Sales & Use Tax tracking aligned with Comptroller requirements — stay audit-ready.',
-    learnMore: '#contact',
+    learnMore: CONTACT_HREF,
   },
 ]
 
