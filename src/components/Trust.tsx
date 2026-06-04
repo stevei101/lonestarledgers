@@ -25,6 +25,10 @@ export default function Trust() {
                 </span>
               ))}
             </div>
+            <p className="text-xs text-slate-500 mt-4">
+              CSV export available today; direct QuickBooks and Xero sync on our roadmap — ask us for current
+              status.
+            </p>
           </div>
 
           <blockquote className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-tx-red">

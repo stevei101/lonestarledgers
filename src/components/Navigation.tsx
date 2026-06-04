@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CONTACT_HREF } from '../constants'
 
 const navLinks = [
   { href: '#services', label: 'Services' },
@@ -36,7 +37,7 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={CONTACT_HREF}
               className="px-6 py-3 bg-tx-red text-white hover:bg-tx-blue transition-colors rounded-lg shadow-md"
             >
               Get started
@@ -71,7 +72,7 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={CONTACT_HREF}
               className="px-6 py-3 bg-tx-red text-white text-center font-bold uppercase tracking-widest text-sm rounded-lg"
               onClick={() => setMenuOpen(false)}
             >

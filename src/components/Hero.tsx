@@ -1,3 +1,4 @@
+import { CONTACT_HREF } from '../constants'
 import DashboardMockup from './DashboardMockup'
 
 export default function Hero() {
@@ -32,7 +33,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
-                href="#contact"
+                href={CONTACT_HREF}
                 className="px-10 py-4 bg-tx-red text-white font-bold text-base rounded-lg shadow-lg hover:bg-tx-blue transition-colors text-center"
               >
                 Get started today

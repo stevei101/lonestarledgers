@@ -1,3 +1,5 @@
+import { COMPANY } from '../constants'
+
 export default function Footer() {
   return (
     <footer className="bg-tx-blue text-white py-16 border-t-8 border-tx-red">
@@ -23,13 +25,11 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`mailto:${COMPANY.email}`}
                 className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-tx-red transition-all"
-                aria-label="LinkedIn"
+                aria-label={`Email ${COMPANY.email}`}
               >
-                <i className="fab fa-linkedin-in" aria-hidden="true" />
+                <i className="fas fa-envelope" aria-hidden="true" />
               </a>
             </div>
           </div>

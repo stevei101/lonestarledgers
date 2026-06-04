@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f1ed"/>
+  <rect width="1200" height="8" fill="#BF0D3E"/>
+  <text x="80" y="200" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#002868">
+    Lone Star Ledgers
+  </text>
+  <text x="80" y="280" font-family="Arial, sans-serif" font-size="36" fill="#1a1a1a">
+    Texas-Modern Bookkeeping &amp; Advisory
+  </text>
+  <text x="80" y="360" font-family="Arial, sans-serif" font-size="28" fill="#666666">
+    CPA-ready books · Less manual entry · Real-time visibility
+  </text>
+  <path d="M900 120 L1050 120 L975 280 Z" fill="#B87333" opacity="0.9"/>
+  <path d="M920 300 L1030 300 L975 420 Z" fill="#002868" opacity="0.15"/>
+  <rect x="80" y="480" width="200" height="6" fill="#BF0D3E"/>
+  <text x="80" y="530" font-family="Arial, sans-serif" font-size="22" fill="#B87333">
+    lonestarledgers.com
+  </text>
+</svg>
