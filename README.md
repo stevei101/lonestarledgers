@@ -80,10 +80,23 @@ bun run type-check
 6. **Contact** - Lead capture form ("Claim My Audit")
 7. **Footer** - Company info, service areas, legal disclosure
 
+## Contributing
+
+**All pull requests must target the `develop` branch.** See [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+```bash
+git checkout develop && git pull
+git checkout -b feat/your-change
+# … commit …
+gh pr create --base develop
+```
+
+Production releases merge `develop` → `main` when ready.
+
 ## Deployment
 
 ### GitHub Actions Build Pipeline
-Automatic build on push to `main` branch.
+Automatic build on push and PRs to **`develop`**.
 
 **Workflow File**: `.github/workflows/deploy.yml`
 - Builds with Bun
@@ -97,7 +110,7 @@ lornu.ai bot handles deployment via:
 - **OIDC**: Secure authentication without manual secrets
 - **Private repo sync**: Flux monitors this repo and auto-deploys changes
 
-No manual deployment steps needed—Flux watches the `main` branch and applies changes automatically.
+Confirm which branch your Flux/Kustomize path tracks (`develop` vs `main`) in infrastructure config.
 
 ## Environment
 
