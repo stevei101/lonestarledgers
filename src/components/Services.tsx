@@ -45,7 +45,7 @@ export default function Services() {
             </p>
           </div>
           <p className="text-sm font-semibold text-tx-copper uppercase tracking-widest">
-            Works with QuickBooks &amp; Xero
+            CSV exports today · QuickBooks &amp; Xero on the roadmap
           </p>
         </div>
 

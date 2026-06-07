@@ -102,7 +102,7 @@ export default function Technical() {
               so your books stay accurate when volume spikes.
             </p>
             <div className="flex flex-wrap gap-2 mb-10">
-              {['AI OCR', 'Smart categories', 'Rust engine', 'PostgreSQL'].map((badge) => (
+              {['AI OCR', 'Smart categories', 'Rust engine'].map((badge) => (
                 <span
                   key={badge}
                   className="text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-tx-copper/20 text-tx-copper border border-tx-copper/40"
