@@ -116,12 +116,20 @@ export default function Contact() {
           )}
         </form>
 
-        <p className="text-center text-sm text-slate-300 mt-8">
-          Prefer to write directly?{' '}
-          <a href={`mailto:${COMPANY.email}`} className="underline hover:text-tx-copper">
-            {COMPANY.email}
-          </a>
-        </p>
+        <div className="text-center text-sm text-slate-300 mt-8 space-y-2">
+          <p>
+            Prefer to write directly?{' '}
+            <a href={`mailto:${COMPANY.email}`} className="underline hover:text-tx-copper">
+              {COMPANY.email}
+            </a>
+          </p>
+          <p>
+            Or call us at{' '}
+            <a href={COMPANY.phoneHref} className="underline hover:text-tx-copper">
+              {COMPANY.phone}
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   )

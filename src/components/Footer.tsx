@@ -23,6 +23,18 @@ export default function Footer() {
             <p className="text-slate-500 text-xs leading-relaxed mb-8">
               Not affiliated with unrelated &ldquo;Lone Star Ledger&rdquo; school-data or news sites.
             </p>
+            <div className="space-y-3 mb-4">
+              <p className="text-slate-300 text-sm">
+                <a href={COMPANY.phoneHref} className="hover:text-white transition-colors">
+                  {COMPANY.phone}
+                </a>
+              </p>
+              <p className="text-slate-300 text-sm">
+                <a href={`mailto:${COMPANY.email}`} className="hover:text-white transition-colors">
+                  {COMPANY.email}
+                </a>
+              </p>
+            </div>
             <div className="flex space-x-4">
               <a
                 href={`mailto:${COMPANY.email}`}
@@ -30,6 +42,13 @@ export default function Footer() {
                 aria-label={`Email ${COMPANY.email}`}
               >
                 <i className="fas fa-envelope" aria-hidden="true" />
+              </a>
+              <a
+                href={COMPANY.phoneHref}
+                className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-tx-red transition-all"
+                aria-label={`Call ${COMPANY.phone}`}
+              >
+                <i className="fas fa-phone" aria-hidden="true" />
               </a>
             </div>
           </div>

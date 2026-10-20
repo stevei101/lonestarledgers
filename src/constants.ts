@@ -8,6 +8,8 @@ export const CONTACT_HREF = `#${CONTACT_SECTION_ID}`
 export const COMPANY = {
   name: 'Lone Star Ledgers',
   email: 'hello@lonestarledgers.com',
+  phone: '(512) 631-4407',
+  phoneHref: 'tel:+15126314407',
   responseTime: 'We respond within one business day.',
 } as const
 
